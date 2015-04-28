@@ -69,7 +69,7 @@ More information: https://github.com/skylight1/beaconscan
 Part of the purpose of the Mirror API app was to make it easier for people to install the full
 BeaconCrawl app, since there was no app store for Google Glass at the time.
 
-### static/images
+### /src/main/webapp/static/images/
 
 Photo overlays for the vignettes are stored here
 
