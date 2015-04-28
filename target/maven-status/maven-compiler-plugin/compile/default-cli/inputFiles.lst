@@ -1,0 +1,11 @@
+/web/beacon-mirror/src/main/java/com/google/glassware/NotifyServlet.java
+/web/beacon-mirror/src/main/java/com/google/glassware/ListableMemoryCredentialStore.java
+/web/beacon-mirror/src/main/java/com/google/glassware/MainServlet.java
+/web/beacon-mirror/src/main/java/com/google/glassware/AuthServlet.java
+/web/beacon-mirror/src/main/java/com/google/glassware/MirrorClient.java
+/web/beacon-mirror/src/main/java/com/google/glassware/AuthUtil.java
+/web/beacon-mirror/src/main/java/com/google/glassware/AuthFilter.java
+/web/beacon-mirror/src/main/java/com/google/glassware/AttachmentProxyServlet.java
+/web/beacon-mirror/src/main/java/com/google/glassware/NewUserBootstrapper.java
+/web/beacon-mirror/src/main/java/com/google/glassware/ReauthFilter.java
+/web/beacon-mirror/src/main/java/com/google/glassware/WebUtil.java
