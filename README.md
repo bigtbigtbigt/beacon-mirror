@@ -26,40 +26,52 @@ the application.
 To deploy, be sure to run the following from the same directory as the pom.xml file (On Ubuntu, 
 usually /web/beacon-mirror/)
 
- sudo mvn compiler:compile
- sudo mvn war:war | tee /dev/tty
- sudo cp /web/beacon-mirror/target/beacon-crawl-0.1-SNAPSHOT.war /var/lib/tomcat7/webapps/ROOT.war
+````
+sudo mvn compiler:compile
+sudo mvn war:war | tee /dev/tty
+sudo cp /web/beacon-mirror/target/beacon-crawl-0.1-SNAPSHOT.war /var/lib/tomcat7/webapps/ROOT.war
+````
 
 (I chained these together in .bash_profile with the command "deploy" as follows)
 
- alias deploy="cd /web/beacon-mirror/ ; sudo mvn compiler:compile ; sudo mvn war:war | tee /dev/tty ; sudo cp /web/beacon-mirror/target/beacon-crawl-0.1-SNAPSHOT.war /var/lib/tomcat7/webapps/ROOT.war"
+    alias deploy="cd /web/beacon-mirror/ ; sudo mvn compiler:compile ; sudo mvn war:war | tee /dev/tty ; sudo cp /web/beacon-mirror/target/beacon-crawl-0.1-SNAPSHOT.war /var/lib/tomcat7/webapps/ROOT.war"
 
 ## Key files
 
-### beacon-mirror-glassware/MainServlet.java
+### /src/main/java/com/google/glassware/MainServlet.java
 
-### admin.jsp
+Based off the QuickStart, this file checks to see if the user is new, welcomes them if appropriate,
+sets them up with a session, and handles all the POSTS coming from admin.jsp and index.jsp, 
+translating them into commands for the Mirror API
 
-### index.jsp
+### /src/main/webapp/admin.jsp
 
-### NewUserBootstrapper.java
+Based off the Quickstart, this is the administrative control panel for the app. It enables an admin
+to, for example, send a Glass notification to all the active users.
 
-### beaconscan.apk
+### /src/main/webapp/index.jsp
 
-The APK for the full Beacon Crawl app. This app, written by the Skylight1 team, let users know 
+This page has some of the features of the admin.jsp, but more generally, it provides a way for
+the user to install the APK for the full BeaconCrawl app.
+
+### /src/main/java/com/google/glassware/NewUserBootstrapper.java
+
+Based off the QuickStart, this file initializes a new user and sends appropriate cards and vignettes
+to their Glass timeline, including an option to pin the app, so it's always easy to find.
+
+### /src/main/webapp/static/beaconscan.apk
+
+The APK for the full BeaconCrawl app. This app, written by the Skylight1 team, let users know
 whether they were in range of the Gimbal(TM) beacons.
 
-### /src/main/java/com/google/glassware/AuthServlet.java
+More information: https://github.com/skylight1/beaconscan
 
-### /src/main/java/com/google/glassware/ReauthFilter.java
-
-### /src/main/java/com/google/glassware/AuthFilter.java
-
-### /src/main/webapp/WEB-INF/web.xml
+Part of the purpose of the Mirror API app was to make it easier for people to install the full
+BeaconCrawl app, since there was no app store for Google Glass at the time.
 
 ### static/images
 
-Photo overlays are stored here
+Photo overlays for the vignettes are stored here
 
 ## License
 Code for this project is licensed under [APL 2.0](http://www.apache.org/licenses/LICENSE-2.0.html)
